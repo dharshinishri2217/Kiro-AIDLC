@@ -1,0 +1,13 @@
+{
+  "enabled": true,
+  "name": "Project Health Check",
+  "description": "Manually trigger a health check across all three services — frontend build, backend API, and Python stats",
+  "version": "1",
+  "when": {
+    "type": "userTriggered"
+  },
+  "then": {
+    "type": "runCommand",
+    "command": "echo \"=== Frontend ===\" && cd frontend && npx vite build --mode development 2>&1 | tail -5 && echo \"=== Backend ===\" && curl -s http://localhost:5000/api/health && echo \"\" && echo \"=== Python ===\" && curl -s http://localhost:5001/api/health"
+  }
+}

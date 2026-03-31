@@ -1,0 +1,19 @@
+{
+  "mcpServers": {
+    "fetch": {
+      "command": "C:\\Users\\Admin\\.local\\bin\\uvx.exe",
+      "args": [
+        "mcp-server-fetch"
+      ]
+    },
+    "mongodb": {
+      "command": "C:\\Users\\Admin\\.local\\bin\\uvx.exe",
+      "args": [
+        "mongodb-mcp-server"
+      ],
+      "env": {
+        "MDB_MCP_CONNECTION_STRING": "mongodb://localhost:27017/if-she-stopped"
+      }
+    }
+  }
+}

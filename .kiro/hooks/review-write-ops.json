@@ -1,0 +1,13 @@
+{
+  "name": "Review Write Operations",
+  "version": "1.0.0",
+  "description": "Before any file write, verify it follows project coding standards and doesn't break existing components",
+  "when": {
+    "type": "preToolUse",
+    "toolTypes": ["write"]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "A file write is about to happen. Verify: (1) The file follows the project's React + Tailwind coding style, (2) It doesn't duplicate existing component logic, (3) It doesn't break imports in App.jsx or other components. If all good, proceed. If not, flag the issue."
+  }
+}

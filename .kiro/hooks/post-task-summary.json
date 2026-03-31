@@ -1,0 +1,12 @@
+{
+  "name": "Post Task Summary",
+  "version": "1.0.0",
+  "description": "After each spec task completes, print a brief summary of what was done",
+  "when": {
+    "type": "postTaskExecution"
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "A spec task just completed. Write a 2-sentence summary of what was implemented, which files were changed, and whether any follow-up is needed. Keep it concise."
+  }
+}

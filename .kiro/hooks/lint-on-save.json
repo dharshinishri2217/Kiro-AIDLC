@@ -1,0 +1,13 @@
+{
+  "name": "Lint on Save",
+  "version": "1.0.0",
+  "description": "Run ESLint automatically when any frontend JS/JSX file is saved",
+  "when": {
+    "type": "fileEdited",
+    "patterns": ["frontend/src/**/*.jsx", "frontend/src/**/*.js"]
+  },
+  "then": {
+    "type": "runCommand",
+    "command": "cd frontend && npx eslint src --fix --quiet"
+  }
+}

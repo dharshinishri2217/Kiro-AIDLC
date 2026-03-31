@@ -1,0 +1,13 @@
+{
+  "name": "Test Backend on Route Change",
+  "version": "1.0.0",
+  "description": "When a backend route file is edited, remind the agent to verify the API still works correctly",
+  "when": {
+    "type": "fileEdited",
+    "patterns": ["backend/routes/**/*.js", "backend/models/**/*.js"]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "A backend route or model was just edited. Check: (1) All route handlers have proper error handling with try/catch, (2) Auth middleware is applied where needed, (3) Response shapes are consistent with what the frontend api.js expects. Flag any issues found."
+  }
+}
